@@ -1,0 +1,64 @@
+INFO:__main__:Report builder initialized for 2025-10
+INFO:__main__:Report period: 2025-10-01 to 2025-10-31
+INFO:__main__:Output directory: reports\2025-10
+INFO:__main__:Building monthly reports...
+INFO:__main__:Generating Sales & Channel Performance Report...
+INFO:src.reporting.sql_reports:Executing Sales & Channel Performance query for 2025-10-01 to 2025-10-31
+INFO:src.db_client:Successfully executed query, returned 4 rows
+INFO:src.reporting.chart_generator:Saved bar chart to reports\2025-10\sales_channel_chart.png
+INFO:__main__:Saved sales_channel_report.html
+INFO:__main__:Generating Product Performance Report...
+INFO:src.reporting.sql_reports:Executing Product Performance queries for 2025-10-01 to 2025-10-31
+INFO:src.db_client:Successfully executed query, returned 20 rows
+INFO:src.db_client:Successfully executed query, returned 20 rows
+INFO:src.db_client:Successfully executed query, returned 1 rows
+INFO:src.reporting.chart_generator:Saved Pareto chart to reports\2025-10\product_pareto_chart.png
+INFO:__main__:Saved product_performance_report.html
+INFO:__main__:Generating Inventory Health Report...
+INFO:src.db_client:Successfully executed query, returned 1 rows
+INFO:src.reporting.sql_reports:Executing Inventory Health queries for 2025-11-26
+INFO:src.db_client:Successfully executed query, returned 3 rows
+INFO:src.db_client:Successfully executed query, returned 15 rows
+INFO:src.db_client:Successfully executed query, returned 3 rows
+INFO:src.reporting.chart_generator:Saved horizontal bar chart to reports\2025-10\inventory_warehouse_chart.png
+INFO:__main__:Saved inventory_health_report.html
+INFO:__main__:Generating Customer Demographics Report...
+INFO:src.reporting.sql_reports:Executing Customer Demographics queries for 2025-10-01 to 2025-10-31
+INFO:src.db_client:Successfully executed query, returned 30 rows
+INFO:src.db_client:Successfully executed query, returned 1 rows
+INFO:src.db_client:Successfully executed query, returned 30 rows
+INFO:src.reporting.chart_generator:Saved horizontal bar chart to reports\2025-10\customer_geo_chart.png
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:src.reporting.chart_generator:Saved line chart to reports\2025-10\customer_acquisition_chart.png
+INFO:__main__:Saved customer_demographics_report.html
+INFO:__main__:Generating Payment Analysis Report...
+INFO:src.reporting.sql_reports:Executing Payment Analysis queries for 2025-10-01 to 2025-10-31
+INFO:src.db_client:Successfully executed query, returned 3 rows
+INFO:src.db_client:Successfully executed query, returned 3 rows
+INFO:src.db_client:Successfully executed query, returned 4 rows
+INFO:src.reporting.chart_generator:Saved pie chart to reports\2025-10\payment_methods_chart.png
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:src.reporting.chart_generator:Saved line chart to reports\2025-10\daily_cashflow_chart.png
+INFO:__main__:Saved payment_analysis_report.html
+INFO:__main__:Generating index page...
+INFO:__main__:Saved index.html
+INFO:__main__:Generating Executive Summary with LLM...
+INFO:src.llm_client:Sending data to LLM for insight generation...
+ERROR:src.llm_client:Error generating insights: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+INFO:src.reporting.executive_summary_generator:PowerPoint presentation saved to reports\2025-10\executive_summary.pptx
+INFO:__main__:Executive summary PowerPoint created: reports\2025-10\executive_summary.pptx
+INFO:__main__:Report generation complete.
+INFO:__main__:Reports saved to reports\2025-10

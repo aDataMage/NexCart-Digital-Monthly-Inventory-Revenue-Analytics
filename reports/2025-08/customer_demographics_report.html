@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Demographics & Behavior Report</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f5f5; padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; margin-bottom: 10px; font-size: 32px; }
+        h2 { color: #34495e; margin-top: 30px; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #9b59b6; }
+        .header { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        .meta { color: #7f8c8d; font-size: 14px; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 14px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #9b59b6; color: white; font-weight: 600; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:hover { background-color: #f0f0f0; }
+        .chart { margin: 30px 0; text-align: center; }
+        .chart img { max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .back-link { display: inline-block; margin-top: 30px; padding: 10px 20px; background: #9b59b6; color: white; text-decoration: none; border-radius: 4px; }
+        .back-link:hover { background: #8e44ad; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 20px 0; }
+        .insight-box { background: #ebdef0; padding: 20px; border-radius: 5px; margin: 20px 0; }
+        .insight-box h3 { color: #2c3e50; margin-bottom: 10px; }
+        .stat  { margin: 10px 0; font-size: 16px; }
+        .stat-label { color: #7f8c8d; }
+        .stat-value { font-weight: bold; color: #2c3e50; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Customer Demographics & Behavior Report</h1>
+            <p class="meta">Report Period: August 2025 | Generated: 2025-08-01 to 2025-08-31</p>
+        </div>
+
+        
+        <div class="insight-box">
+            <h3>📊 Key Insight</h3>
+            <div class="stat">
+                <span class="stat-label">Average Time to First Purchase:</span>
+                <span class="stat-value">46.2 days</span>
+            </div>
+        </div>
+        
+
+        
+        <div class="chart">
+            <h2>Top States by Sales Volume</h2>
+            <img src="customer_geo_chart.png" alt="Geographic Chart">
+        </div>
+        
+
+        
+        <div class="chart">
+            <h2>New Customer Acquisition Trend</h2>
+            <img src="customer_acquisition_chart.png" alt="Acquisition Chart">
+        </div>
+        
+
+        <div class="grid">
+            <div>
+                <h2>Geographic Distribution</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>State</th>
+                            <th>City</th>
+                            <th>Customers</th>
+                            <th>Total Sales</th>
+                            <th>Orders</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td><strong>NE</strong></td>
+                            <td>Penabury</td>
+                            <td>1</td>
+                            <td>$14250.71</td>
+                            <td>6</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>MP</strong></td>
+                            <td>Aguilarmouth</td>
+                            <td>1</td>
+                            <td>$12514.21</td>
+                            <td>7</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>NC</strong></td>
+                            <td>Nicoleville</td>
+                            <td>1</td>
+                            <td>$11256.76</td>
+                            <td>3</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>MS</strong></td>
+                            <td>Schroedershire</td>
+                            <td>1</td>
+                            <td>$9919.07</td>
+                            <td>4</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>NJ</strong></td>
+                            <td>Woodside</td>
+                            <td>1</td>
+                            <td>$9570.06</td>
+                            <td>5</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>WV</strong></td>
+                            <td>Jensenstad</td>
+                            <td>1</td>
+                            <td>$8527.89</td>
+                            <td>5</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>OH</strong></td>
+                            <td>Ryanchester</td>
+                            <td>1</td>
+                            <td>$7821.08</td>
+                            <td>4</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>MN</strong></td>
+                            <td>Port Kevinview</td>
+                            <td>1</td>
+                            <td>$7799.23</td>
+                            <td>3</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>MP</strong></td>
+                            <td>West Jasonton</td>
+                            <td>1</td>
+                            <td>$7784.82</td>
+                            <td>4</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>TN</strong></td>
+                            <td>Hinesfurt</td>
+                            <td>1</td>
+                            <td>$7573.07</td>
+                            <td>3</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>VI</strong></td>
+                            <td>Zacharytown</td>
+                            <td>1</td>
+                            <td>$7474.29</td>
+                            <td>3</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>GA</strong></td>
+                            <td>Meghanland</td>
+                            <td>1</td>
+                            <td>$7330.52</td>
+                            <td>2</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>NH</strong></td>
+                            <td>Thomasberg</td>
+                            <td>1</td>
+                            <td>$7299.14</td>
+                            <td>4</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>VI</strong></td>
+                            <td>Ingramstad</td>
+                            <td>1</td>
+                            <td>$6956.74</td>
+                            <td>3</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>WA</strong></td>
+                            <td>New John</td>
+                            <td>1</td>
+                            <td>$6948.20</td>
+                            <td>3</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>VT</strong></td>
+                            <td>Hendersonstad</td>
+                            <td>1</td>
+                            <td>$6935.08</td>
+                            <td>4</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>AZ</strong></td>
+                            <td>Jeffreyfurt</td>
+                            <td>1</td>
+                            <td>$6919.56</td>
+                            <td>2</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>PR</strong></td>
+                            <td>South Patricia</td>
+                            <td>1</td>
+                            <td>$6833.70</td>
+                            <td>4</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>FL</strong></td>
+                            <td>Santanaborough</td>
+                            <td>1</td>
+                            <td>$6831.30</td>
+                            <td>5</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>NM</strong></td>
+                            <td>Vincentmouth</td>
+                            <td>1</td>
+                            <td>$6337.21</td>
+                            <td>3</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+
+            <div>
+                <h2>New Customer Acquisition</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>New Customers</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td>2025-08</td>
+                            <td><strong>48</strong></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to Dashboard</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f5f5; padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; margin-bottom: 10px; font-size: 32px; }
+        h2 { color: #34495e; margin-top: 30px; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #16a085; }
+        .header { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        .meta { color: #7f8c8d; font-size: 14px; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 14px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #16a085; color: white; font-weight: 600; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:hover { background-color: #f0f0f0; }
+        .chart { margin: 30px 0; text-align: center; }
+        .chart img { max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .alert-box { background: #ffebee; border-left: 4px solid #e74c3c; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .back-link { display: inline-block; margin-top: 30px; padding: 10px 20px; background: #16a085; color: white; text-decoration: none; border-radius: 4px; }
+        .back-link:hover { background: #138d75; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>{{ title }}</h1>
+            <p class="meta">Report Period: {{ report_month }} | Generated: {{ start_date }} to {{ end_date }}</p>
+        </div>
+
+        {% if total_unsettled > 0 %}
+        <div class="alert-box">
+            <strong>⚠️ Reconciliation Alert:</strong> {{ total_unsettled }} orders are unsettled (no successful transaction)
+        </div>
+        {% endif %}
+
+        {% if chart_filename %}
+        <div class="chart">
+            <h2>Payment Method Distribution</h2>
+            <img src="{{ chart_filename }}" alt="Payment Methods Chart">
+        </div>
+        {% endif %}
+
+        {% if cashflow_chart %}
+        <div class="chart">
+            <h2>Daily Cash Flow</h2>
+            <img src="{{ cashflow_chart }}" alt="Cash Flow Chart">
+        </div>
+        {% endif %}
+
+        <div class="grid">
+            <div>
+                <h2>Payment Method Statistics</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Payment Method</th>
+                            <th>Transactions</th>
+                            <th>Total Amount</th>
+                            <th>Avg Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in payment_methods %}
+                        <tr>
+                            <td><strong>{{ row.payment_method }}</strong></td>
+                            <td>{{ row.transaction_count }}</td>
+                            <td>${{ "%.2f"|format(row.total_amount) }}</td>
+                            <td>${{ "%.2f"|format(row.avg_transaction_amount) }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div>
+                <h2>Unsettled Orders</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in unsettled_orders[:15] %}
+                        <tr>
+                            <td>{{ row.order_id }}</td>
+                            <td>{{ row.order_date }}</td>
+                            <td>${{ "%.2f"|format(row.total_amount) }}</td>
+                            <td><span style="color: orange;">{{ row.order_status }}</span></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% if total_unsettled > 15 %}
+                <p style="color: #7f8c8d; font-size: 12px; margin-top: 5px;">
+                    Showing 15 of {{ total_unsettled }} unsettled orders
+                </p>
+                {% endif %}
+            </div>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to Dashboard</a>
+    </div>
+</body>
+</html>

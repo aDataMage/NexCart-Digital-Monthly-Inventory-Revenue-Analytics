@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monthly Report</title>
+    <style>
+        body { font-family: sans-serif; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .header { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Monthly Inventory & Revenue Report</h1>
+        <p>Date: {{ date }}</p>
+    </div>
+
+    <div class="insights">
+        {{ insights | replace('\n', '<br>') | safe }}
+    </div>
+
+    <div class="kpis">
+        <h2>Detailed KPI Data</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Channel</th>
+                    <th>Revenue</th>
+                    <th>Orders</th>
+                    <th>AOV</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for channel in kpi_data.channels %}
+                <tr>
+                    <td>{{ channel.channel_id }}</td>
+                    <td>${{ "%.2f"|format(channel.total_revenue) }}</td>
+                    <td>{{ channel.order_count }}</td>
+                    <td>${{ "%.2f"|format(channel.avg_order_value) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+MONTHLY INVENTORY & REVENUE REPORT
+====================================
+Date: {{ date }}
+
+{{ insights }}
+
+DETAILED KPI DATA
+-----------------
+{% for channel in kpi_data.channels %}
+Channel: {{ channel.channel_id }}
+  Revenue: ${{ "%.2f"|format(channel.total_revenue) }}
+  Orders:  {{ channel.order_count }}
+  AOV:     ${{ "%.2f"|format(channel.avg_order_value) }}
+{% endfor %}
+
+END OF REPORT

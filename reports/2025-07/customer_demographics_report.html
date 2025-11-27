@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Demographics & Behavior Report</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f5f5; padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; margin-bottom: 10px; font-size: 32px; }
+        h2 { color: #34495e; margin-top: 30px; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #9b59b6; }
+        .header { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        .meta { color: #7f8c8d; font-size: 14px; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 14px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #9b59b6; color: white; font-weight: 600; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:hover { background-color: #f0f0f0; }
+        .chart { margin: 30px 0; text-align: center; }
+        .chart img { max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .back-link { display: inline-block; margin-top: 30px; padding: 10px 20px; background: #9b59b6; color: white; text-decoration: none; border-radius: 4px; }
+        .back-link:hover { background: #8e44ad; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 20px 0; }
+        .insight-box { background: #ebdef0; padding: 20px; border-radius: 5px; margin: 20px 0; }
+        .insight-box h3 { color: #2c3e50; margin-bottom: 10px; }
+        .stat  { margin: 10px 0; font-size: 16px; }
+        .stat-label { color: #7f8c8d; }
+        .stat-value { font-weight: bold; color: #2c3e50; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Customer Demographics & Behavior Report</h1>
+            <p class="meta">Report Period: July 2025 | Generated: 2025-07-01 to 2025-07-31</p>
+        </div>
+
+        
+        <div class="insight-box">
+            <h3>📊 Key Insight</h3>
+            <div class="stat">
+                <span class="stat-label">Average Time to First Purchase:</span>
+                <span class="stat-value">24.3 days</span>
+            </div>
+        </div>
+        
+
+        
+        <div class="chart">
+            <h2>Top States by Sales Volume</h2>
+            <img src="customer_geo_chart.png" alt="Geographic Chart">
+        </div>
+        
+
+        
+        <div class="chart">
+            <h2>New Customer Acquisition Trend</h2>
+            <img src="customer_acquisition_chart.png" alt="Acquisition Chart">
+        </div>
+        
+
+        <div class="grid">
+            <div>
+                <h2>Geographic Distribution</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>State</th>
+                            <th>City</th>
+                            <th>Customers</th>
+                            <th>Total Sales</th>
+                            <th>Orders</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td><strong>NH</strong></td>
+                            <td>Port Sharonberg</td>
+                            <td>1</td>
+                            <td>$11901.37</td>
+                            <td>8</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>VI</strong></td>
+                            <td>East Tiffanyton</td>
+                            <td>1</td>
+                            <td>$11178.48</td>
+                            <td>6</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>KY</strong></td>
+                            <td>Jerrymouth</td>
+                            <td>1</td>
+                            <td>$10494.13</td>
+                            <td>3</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>WV</strong></td>
+                            <td>Port Joseph</td>
+                            <td>1</td>
+                            <td>$10067.50</td>
+                            <td>5</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>MO</strong></td>
+                            <td>Port Jenniferborough</td>
+                            <td>1</td>
+                            <td>$10033.11</td>
+                            <td>4</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>ME</strong></td>
+                            <td>Lake Rebecca</td>
+                            <td>1</td>
+                            <td>$9947.12</td>
+                            <td>5</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>LA</strong></td>
+                            <td>East Erika</td>
+                            <td>1</td>
+                            <td>$9789.80</td>
+                            <td>4</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>MI</strong></td>
+                            <td>Francisview</td>
+                            <td>1</td>
+                            <td>$9569.89</td>
+                            <td>5</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>AK</strong></td>
+                            <td>New Samuel</td>
+                            <td>1</td>
+                            <td>$9540.57</td>
+                            <td>4</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>LA</strong></td>
+                            <td>New Diana</td>
+                            <td>1</td>
+                            <td>$9234.22</td>
+                            <td>3</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>CO</strong></td>
+                            <td>Ryanfurt</td>
+                            <td>1</td>
+                            <td>$9131.36</td>
+                            <td>4</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>FL</strong></td>
+                            <td>Santanaborough</td>
+                            <td>1</td>
+                            <td>$8857.79</td>
+                            <td>5</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>AZ</strong></td>
+                            <td>Port Patrickport</td>
+                            <td>1</td>
+                            <td>$8758.82</td>
+                            <td>3</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>NH</strong></td>
+                            <td>Hamiltonchester</td>
+                            <td>1</td>
+                            <td>$8661.01</td>
+                            <td>3</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>FM</strong></td>
+                            <td>South Vincentbury</td>
+                            <td>1</td>
+                            <td>$8528.87</td>
+                            <td>3</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>NJ</strong></td>
+                            <td>Lake Jaredshire</td>
+                            <td>1</td>
+                            <td>$8073.48</td>
+                            <td>4</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>IN</strong></td>
+                            <td>Port Jay</td>
+                            <td>1</td>
+                            <td>$7921.71</td>
+                            <td>4</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>IN</strong></td>
+                            <td>Jodyshire</td>
+                            <td>1</td>
+                            <td>$7853.06</td>
+                            <td>4</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>ME</strong></td>
+                            <td>Alanmouth</td>
+                            <td>1</td>
+                            <td>$7742.44</td>
+                            <td>3</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>NM</strong></td>
+                            <td>South Brandonland</td>
+                            <td>1</td>
+                            <td>$7653.61</td>
+                            <td>3</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+
+            <div>
+                <h2>New Customer Acquisition</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>New Customers</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td>2025-07</td>
+                            <td><strong>53</strong></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to Dashboard</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Monthly Analytics Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        h1 { 
+            color: #2c3e50; 
+            margin-bottom: 10px; 
+            font-size: 42px;
+            text-align: center;
+        }
+        .meta { 
+            color: #7f8c8d; 
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header { 
+            margin-bottom: 40px; 
+            padding-bottom: 20px;
+            border-bottom: 2px solid #667eea;
+        }
+        .reports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .report-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .report-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        .report-card h2 {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .report-card p {
+            color: #5a6c7d;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .report-card a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        .report-card a:hover {
+            background: #764ba2;
+        }
+        .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Monthly Analytics Dashboard</h1>
+            <p class="meta">August 2025 | Generated: 2025-11-27 19:58:19</p>
+        </div>
+
+        <div class="reports-grid">
+            
+            <div class="report-card">
+                <div class="icon">
+                    💰
+                    
+                </div>
+                <h2>Sales & Channel Performance</h2>
+                <p>Revenue analysis across sales channels with gross vs net comparisons</p>
+                <a href="sales_channel_report.html">View Report →</a>
+            </div>
+            
+            <div class="report-card">
+                <div class="icon">
+                    📦
+                    
+                </div>
+                <h2>Product Performance</h2>
+                <p>Top-selling products, revenue drivers, and merchandising insights</p>
+                <a href="product_performance_report.html">View Report →</a>
+            </div>
+            
+            <div class="report-card">
+                <div class="icon">
+                    📊
+                    
+                </div>
+                <h2>Inventory Health</h2>
+                <p>Warehouse distribution, low stock alerts, and inventory valuation</p>
+                <a href="inventory_health_report.html">View Report →</a>
+            </div>
+            
+            <div class="report-card">
+                <div class="icon">
+                    👥
+                    
+                </div>
+                <h2>Customer Demographics</h2>
+                <p>Geographic distribution, acquisition trends, and behavior analysis</p>
+                <a href="customer_demographics_report.html">View Report →</a>
+            </div>
+            
+            <div class="report-card">
+                <div class="icon">
+                    💳
+                    
+                </div>
+                <h2>Payment Analysis</h2>
+                <p>Payment method distribution, unsettled orders, and cash flow</p>
+                <a href="payment_analysis_report.html">View Report →</a>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

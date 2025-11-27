@@ -1,0 +1,137 @@
+INFO:__main__:Report builder initialized for 2025-10
+INFO:__main__:Report period: 2025-10-01 to 2025-10-31
+INFO:__main__:Output directory: reports\2025-10
+INFO:__main__:Building monthly reports...
+INFO:__main__:Generating Sales & Channel Performance Report...
+INFO:src.reporting.sql_reports:Executing Sales & Channel Performance query for 2025-10-01 to 2025-10-31
+ERROR:src.db_client:Error executing query: (sqlite3.OperationalError) no such table: channels
+[SQL: 
+    SELECT 
+        c.channel_id,
+        c.channel_name,
+        c.commission_rate,
+        SUM(o.total_amount) as gross_revenue,
+        SUM(o.total_amount * (1 - c.commission_rate)) as net_revenue,
+        COUNT(o.order_id) as order_count,
+        AVG(o.total_amount) as avg_order_value
+    FROM orders_clean o
+    JOIN channels c ON o.channel_id = c.channel_id
+    WHERE o.order_date BETWEEN '2025-10-01' AND '2025-10-31'
+    GROUP BY c.channel_id, c.channel_name, c.commission_rate
+    ORDER BY gross_revenue DESC
+    ]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+ERROR:__main__:Error building reports: (sqlite3.OperationalError) no such table: channels
+[SQL: 
+    SELECT 
+        c.channel_id,
+        c.channel_name,
+        c.commission_rate,
+        SUM(o.total_amount) as gross_revenue,
+        SUM(o.total_amount * (1 - c.commission_rate)) as net_revenue,
+        COUNT(o.order_id) as order_count,
+        AVG(o.total_amount) as avg_order_value
+    FROM orders_clean o
+    JOIN channels c ON o.channel_id = c.channel_id
+    WHERE o.order_date BETWEEN '2025-10-01' AND '2025-10-31'
+    GROUP BY c.channel_id, c.channel_name, c.commission_rate
+    ORDER BY gross_revenue DESC
+    ]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\default.py", line 951, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: channels
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\Projects\NOV-2025\src\reporting\report_builder.py", line 335, in <module>
+    builder.build_report()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Projects\NOV-2025\src\reporting\report_builder.py", line 54, in build_report
+    self._build_sales_channel_report()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Projects\NOV-2025\src\reporting\report_builder.py", line 75, in _build_sales_channel_report
+    data = sql_reports.get_sales_channel_performance(
+        self.db_client, self.start_date, self.end_date
+    )
+  File "D:\Projects\NOV-2025\src\reporting\sql_reports.py", line 43, in get_sales_channel_performance
+    return db_client.execute_query(query)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "D:\Projects\NOV-2025\src\db_client.py", line 35, in execute_query
+    df = pd.read_sql(query, self.engine)
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\sql.py", line 736, in read_sql
+    return pandas_sql.read_query(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        sql,
+        ^^^^
+    ...<6 lines>...
+        dtype=dtype,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\sql.py", line 1848, in read_query
+    result = self.execute(sql, params)
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\sql.py", line 1671, in execute
+    return self.con.exec_driver_sql(sql, *args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1779, in exec_driver_sql
+    ret = self._execute_context(
+        dialect,
+    ...<5 lines>...
+        distilled_parameters,
+    )
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\default.py", line 951, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: channels
+[SQL: 
+    SELECT 
+        c.channel_id,
+        c.channel_name,
+        c.commission_rate,
+        SUM(o.total_amount) as gross_revenue,
+        SUM(o.total_amount * (1 - c.commission_rate)) as net_revenue,
+        COUNT(o.order_id) as order_count,
+        AVG(o.total_amount) as avg_order_value
+    FROM orders_clean o
+    JOIN channels c ON o.channel_id = c.channel_id
+    WHERE o.order_date BETWEEN '2025-10-01' AND '2025-10-31'
+    GROUP BY c.channel_id, c.channel_name, c.commission_rate
+    ORDER BY gross_revenue DESC
+    ]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Product Performance & Merchandising Report</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 { 
+            color: #2c3e50; 
+            margin-bottom: 10px; 
+            font-size: 32px;
+        }
+        h2 { 
+            color: #34495e; 
+            margin-top: 30px; 
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e74c3c;
+        }
+        .header { 
+            margin-bottom: 30px; 
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .meta { 
+            color: #7f8c8d; 
+            font-size: 14px;
+        }
+        table { 
+            border-collapse: collapse; 
+            width: 100%; 
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        th, td { 
+            border: 1px solid #ddd; 
+            padding: 12px; 
+            text-align: left; 
+        }
+        th { 
+            background-color: #e74c3c; 
+            color: white;
+            font-weight: 600;
+        }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:hover { background-color: #f0f0f0; }
+        .chart { 
+            margin: 30px 0; 
+            text-align: center;
+        }
+        .chart img { 
+            max-width: 100%; 
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .summary-box {
+            background: #fef5e7;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #f39c12;
+        }
+        .summary-box h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .stat {
+            display: inline-block;
+            margin-right: 30px;
+        }
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .back-link:hover {
+            background: #c0392b;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Product Performance & Merchandising Report</h1>
+            <p class="meta">Report Period: August 2025 | Generated: 2025-08-01 to 2025-08-31</p>
+        </div>
+
+        <div class="summary-box">
+            <h3>Average Order Value (AOV)</h3>
+            <div class="stat">
+                <div class="stat-label">Total Revenue</div>
+                <div class="stat-value">$517363.39</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">Total Orders</div>
+                <div class="stat-value">300</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">AOV</div>
+                <div class="stat-value">$1724.54</div>
+            </div>
+        </div>
+        
+        
+        <div class="chart">
+            <h2>Revenue Pareto Analysis</h2>
+            <img src="product_pareto_chart.png" alt="Pareto Chart">
+            <p style="color: #7f8c8d; font-size: 14px; margin-top: 10px;">
+                80% of revenue typically comes from 20% of products
+            </p>
+        </div>
+        
+
+        <div class="grid">
+            <div>
+                <h2>Top Selling SKUs (by Quantity)</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>SKU</th>
+                            <th>Quantity Sold</th>
+                            <th>Revenue</th>
+                            <th>Avg Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td><strong>SKU-0048</strong></td>
+                            <td>182</td>
+                            <td>$16538.95</td>
+                            <td>$97.34</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0028</strong></td>
+                            <td>162</td>
+                            <td>$17130.54</td>
+                            <td>$107.86</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0012</strong></td>
+                            <td>148</td>
+                            <td>$17095.56</td>
+                            <td>$109.22</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0046</strong></td>
+                            <td>138</td>
+                            <td>$13231.07</td>
+                            <td>$96.97</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0032</strong></td>
+                            <td>138</td>
+                            <td>$10519.59</td>
+                            <td>$85.69</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0041</strong></td>
+                            <td>137</td>
+                            <td>$14381.45</td>
+                            <td>$106.32</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0044</strong></td>
+                            <td>136</td>
+                            <td>$17450.96</td>
+                            <td>$120.45</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0016</strong></td>
+                            <td>135</td>
+                            <td>$15426.18</td>
+                            <td>$112.62</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0045</strong></td>
+                            <td>131</td>
+                            <td>$14263.39</td>
+                            <td>$103.46</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0007</strong></td>
+                            <td>129</td>
+                            <td>$12508.35</td>
+                            <td>$92.43</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0037</strong></td>
+                            <td>126</td>
+                            <td>$14233.98</td>
+                            <td>$113.99</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0033</strong></td>
+                            <td>123</td>
+                            <td>$14024.65</td>
+                            <td>$108.65</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0011</strong></td>
+                            <td>118</td>
+                            <td>$12605.60</td>
+                            <td>$108.17</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0010</strong></td>
+                            <td>114</td>
+                            <td>$14309.41</td>
+                            <td>$109.57</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0014</strong></td>
+                            <td>112</td>
+                            <td>$11948.39</td>
+                            <td>$109.75</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+
+            <div>
+                <h2>Revenue Drivers (by Revenue)</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>SKU</th>
+                            <th>Revenue</th>
+                            <th>Quantity</th>
+                            <th>Orders</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td><strong>SKU-0044</strong></td>
+                            <td>$17450.96</td>
+                            <td>136</td>
+                            <td>24</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0028</strong></td>
+                            <td>$17130.54</td>
+                            <td>162</td>
+                            <td>24</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0012</strong></td>
+                            <td>$17095.56</td>
+                            <td>148</td>
+                            <td>24</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0048</strong></td>
+                            <td>$16538.95</td>
+                            <td>182</td>
+                            <td>30</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0016</strong></td>
+                            <td>$15426.18</td>
+                            <td>135</td>
+                            <td>19</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0041</strong></td>
+                            <td>$14381.45</td>
+                            <td>137</td>
+                            <td>24</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0010</strong></td>
+                            <td>$14309.41</td>
+                            <td>114</td>
+                            <td>22</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0045</strong></td>
+                            <td>$14263.39</td>
+                            <td>131</td>
+                            <td>19</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0037</strong></td>
+                            <td>$14233.98</td>
+                            <td>126</td>
+                            <td>23</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0033</strong></td>
+                            <td>$14024.65</td>
+                            <td>123</td>
+                            <td>20</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0046</strong></td>
+                            <td>$13231.07</td>
+                            <td>138</td>
+                            <td>28</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0001</strong></td>
+                            <td>$12823.91</td>
+                            <td>94</td>
+                            <td>17</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0011</strong></td>
+                            <td>$12605.60</td>
+                            <td>118</td>
+                            <td>19</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0007</strong></td>
+                            <td>$12508.35</td>
+                            <td>129</td>
+                            <td>22</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SKU-0014</strong></td>
+                            <td>$11948.39</td>
+                            <td>112</td>
+                            <td>18</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to Dashboard</a>
+    </div>
+</body>
+</html>

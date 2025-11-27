@@ -1,0 +1,38 @@
+MONTHLY INVENTORY & REVENUE REPORT
+====================================
+Date: 2025-11-27
+
+## Executive Summary
+Performance this month has been stable.
+
+## Key Highlights
+- Channel CH_RET generated $50,219.85 in revenue.
+- Channel CH_AMZ generated $60,683.79 in revenue.
+- Channel CH_SHP generated $57,638.49 in revenue.
+- Channel CH_EBY generated $56,132.23 in revenue.
+
+DETAILED KPI DATA
+-----------------
+
+Channel: CH_RET
+  Revenue: $50219.85
+  Orders:  79
+  AOV:     $635.69
+
+Channel: CH_AMZ
+  Revenue: $60683.79
+  Orders:  90
+  AOV:     $674.26
+
+Channel: CH_SHP
+  Revenue: $57638.49
+  Orders:  92
+  AOV:     $626.51
+
+Channel: CH_EBY
+  Revenue: $56132.23
+  Orders:  89
+  AOV:     $630.70
+
+
+END OF REPORT

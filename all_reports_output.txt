@@ -1,0 +1,66 @@
+INFO:src.reporting.report_builder:Report builder initialized for 2025-07
+INFO:src.reporting.report_builder:Report period: 2025-07-01 to 2025-07-31
+INFO:src.reporting.report_builder:Output directory: reports\2025-07
+INFO:src.reporting.report_builder:Building monthly reports...
+INFO:src.reporting.report_builder:Generating Sales & Channel Performance Report...
+INFO:src.reporting.sql_reports:Executing Sales & Channel Performance query for 2025-07-01 to 2025-07-31
+INFO:src.db_client:Successfully executed query, returned 0 rows
+WARNING:src.reporting.report_builder:No sales channel data found for this period
+INFO:src.reporting.report_builder:Generating Product Performance Report...
+INFO:src.reporting.sql_reports:Executing Product Performance queries for 2025-07-01 to 2025-07-31
+INFO:src.db_client:Successfully executed query, returned 0 rows
+INFO:src.db_client:Successfully executed query, returned 0 rows
+INFO:src.db_client:Successfully executed query, returned 1 rows
+WARNING:src.reporting.report_builder:No product data found for this period
+INFO:src.reporting.report_builder:Generating Inventory Health Report...
+INFO:src.db_client:Successfully executed query, returned 1 rows
+INFO:src.reporting.sql_reports:Executing Inventory Health queries for 2025-11-26
+INFO:src.db_client:Successfully executed query, returned 3 rows
+INFO:src.db_client:Successfully executed query, returned 15 rows
+INFO:src.db_client:Successfully executed query, returned 3 rows
+INFO:src.reporting.chart_generator:Saved horizontal bar chart to reports\2025-07\inventory_warehouse_chart.png
+INFO:src.reporting.report_builder:Saved inventory_health_report.html
+INFO:src.reporting.report_builder:Generating Customer Demographics Report...
+INFO:src.reporting.sql_reports:Executing Customer Demographics queries for 2025-07-01 to 2025-07-31
+INFO:src.db_client:Successfully executed query, returned 0 rows
+INFO:src.db_client:Successfully executed query, returned 1 rows
+INFO:src.db_client:Successfully executed query, returned 0 rows
+WARNING:src.reporting.report_builder:No customer data found for this period
+INFO:src.reporting.report_builder:Generating Payment Analysis Report...
+INFO:src.reporting.sql_reports:Executing Payment Analysis queries for 2025-07-01 to 2025-07-31
+INFO:src.db_client:Successfully executed query, returned 0 rows
+INFO:src.db_client:Successfully executed query, returned 0 rows
+INFO:src.db_client:Successfully executed query, returned 0 rows
+WARNING:src.reporting.report_builder:No payment data found for this period
+INFO:src.reporting.report_builder:Generating index page...
+INFO:src.reporting.report_builder:Saved index.html
+INFO:src.reporting.report_builder:Generating Executive Summary with LLM...
+INFO:src.llm_client:Sending data to LLM for insight generation...
+INFO:src.llm_client:Received insights from LLM
+INFO:src.reporting.executive_summary_generator:PowerPoint presentation saved to reports\2025-07\executive_summary.pptx
+INFO:src.reporting.report_builder:Executive summary PowerPoint created: reports\2025-07\executive_summary.pptx
+INFO:src.reporting.report_builder:Report generation complete.
+INFO:src.reporting.report_builder:Reports saved to reports\2025-07
+
+============================================================
+Generating reports for 2025-07
+============================================================
+Traceback (most recent call last):
+  File "D:\Projects\NOV-2025\scripts\generate_all_reports.py", line 20, in <module>
+    print(f"\u2705 {month} reports complete!")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\NOV-2025\scripts\generate_all_reports.py", line 22, in <module>
+    print(f"\u274c Error generating {month} reports: {e}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 0: character maps to <undefined>

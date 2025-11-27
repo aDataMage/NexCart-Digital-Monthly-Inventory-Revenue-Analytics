@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f5f5; padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; margin-bottom: 10px; font-size: 32px; }
+        h2 { color: #34495e; margin-top: 30px; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #27ae60; }
+        .header { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        .meta { color: #7f8c8d; font-size: 14px; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 14px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #27ae60; color: white; font-weight: 600; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:hover { background-color: #f0f0f0; }
+        .chart { margin: 30px 0; text-align: center; }
+        .chart img { max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .alert-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .back-link { display: inline-block; margin-top: 30px; padding: 10px 20px; background: #27ae60; color: white; text-decoration: none; border-radius: 4px; }
+        .back-link:hover { background: #229954; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin: 20px 0; }
+        .value-card { background: #ecf0f1; padding: 20px; border-radius: 5px; text-align: center; }
+        .value-card h3 { font-size: 14px; color: #7f8c8d; margin-bottom: 10px; }
+        .value-card p { font-size: 28px; font-weight: bold; color: #2c3e50; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>{{ title }}</h1>
+            <p class="meta">Snapshot Date: {{ snapshot_date }} | Report Month: {{ report_month }}</p>
+        </div>
+
+        {% if chart_filename %}
+        <div class="chart">
+            <h2>Warehouse Distribution</h2>
+            <img src="{{ chart_filename }}" alt="Warehouse Chart">
+        </div>
+        {% endif %}
+
+        <div class="grid">
+            {% for row in inventory_value %}
+            <div class="value-card">
+                <h3>{{ row.warehouse_id }} Inventory Value</h3>
+                <p>${{ "%.2f"|format(row.inventory_value) }}</p>
+                <small>{{ row.sku_count }} SKUs</small>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% if total_low_stock > 0 %}
+        <div class="alert-box">
+            <strong>⚠️ Low Stock Alert:</strong> {{ total_low_stock }} SKUs are below the 10-unit threshold
+        </div>
+        {% endif %}
+
+        <h2>Warehouse Distribution</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Warehouse</th>
+                    <th>Unique SKUs</th>
+                    <th>Total Units</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in warehouse_data %}
+                <tr>
+                    <td><strong>{{ row.warehouse_id }}</strong></td>
+                    <td>{{ row.unique_skus }}</td>
+                    <td>{{ row.total_units }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>Low Stock Items (< 10 units)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>SKU</th>
+                    <th>Warehouse</th>
+                    <th>Quantity on Hand</th>
+                    <th>Avg Price</th>
+                    <th>Estimated Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in low_stock_items %}
+                <tr>
+                    <td><strong>{{ row.sku }}</strong></td>
+                    <td>{{ row.warehouse_id }}</td>
+                    <td style="color: {% if row.quantity_on_hand < 5 %}red{% else %}orange{% endif %}; font-weight: bold;">{{ row.quantity_on_hand }}</td>
+                    <td>${{ "%.2f"|format(row.avg_price or 0) }}</td>
+                    <td>${{ "%.2f"|format((row.quantity_on_hand * (row.avg_price or 0))) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="index.html" class="back-link">← Back to Dashboard</a>
+    </div>
+</body>
+</html>

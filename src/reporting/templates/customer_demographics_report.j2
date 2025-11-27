@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f5f5; padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; margin-bottom: 10px; font-size: 32px; }
+        h2 { color: #34495e; margin-top: 30px; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #9b59b6; }
+        .header { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        .meta { color: #7f8c8d; font-size: 14px; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 14px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #9b59b6; color: white; font-weight: 600; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:hover { background-color: #f0f0f0; }
+        .chart { margin: 30px 0; text-align: center; }
+        .chart img { max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .back-link { display: inline-block; margin-top: 30px; padding: 10px 20px; background: #9b59b6; color: white; text-decoration: none; border-radius: 4px; }
+        .back-link:hover { background: #8e44ad; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 20px 0; }
+        .insight-box { background: #ebdef0; padding: 20px; border-radius: 5px; margin: 20px 0; }
+        .insight-box h3 { color: #2c3e50; margin-bottom: 10px; }
+        .stat  { margin: 10px 0; font-size: 16px; }
+        .stat-label { color: #7f8c8d; }
+        .stat-value { font-weight: bold; color: #2c3e50; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>{{ title }}</h1>
+            <p class="meta">Report Period: {{ report_month }} | Generated: {{ start_date }} to {{ end_date }}</p>
+        </div>
+
+        {% if avg_purchase_latency %}
+        <div class="insight-box">
+            <h3>📊 Key Insight</h3>
+            <div class="stat">
+                <span class="stat-label">Average Time to First Purchase:</span>
+                <span class="stat-value">{{ avg_purchase_latency }} days</span>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if chart_filename %}
+        <div class="chart">
+            <h2>Top States by Sales Volume</h2>
+            <img src="{{ chart_filename }}" alt="Geographic Chart">
+        </div>
+        {% endif %}
+
+        {% if acquisition_chart %}
+        <div class="chart">
+            <h2>New Customer Acquisition Trend</h2>
+            <img src="{{ acquisition_chart }}" alt="Acquisition Chart">
+        </div>
+        {% endif %}
+
+        <div class="grid">
+            <div>
+                <h2>Geographic Distribution</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>State</th>
+                            <th>City</th>
+                            <th>Customers</th>
+                            <th>Total Sales</th>
+                            <th>Orders</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in geo_data %}
+                        <tr>
+                            <td><strong>{{ row.state }}</strong></td>
+                            <td>{{ row.city }}</td>
+                            <td>{{ row.customer_count }}</td>
+                            <td>${{ "%.2f"|format(row.total_sales) }}</td>
+                            <td>{{ row.order_count }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div>
+                <h2>New Customer Acquisition</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>New Customers</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in new_customers %}
+                        <tr>
+                            <td>{{ row.signup_month }}</td>
+                            <td><strong>{{ row.new_customers }}</strong></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to Dashboard</a>
+    </div>
+</body>
+</html>
