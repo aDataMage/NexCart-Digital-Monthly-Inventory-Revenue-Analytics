@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Financial Reconciliation & Payment Analysis</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f5f5; padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; margin-bottom: 10px; font-size: 32px; }
+        h2 { color: #34495e; margin-top: 30px; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #16a085; }
+        .header { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        .meta { color: #7f8c8d; font-size: 14px; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 14px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #16a085; color: white; font-weight: 600; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:hover { background-color: #f0f0f0; }
+        .chart { margin: 30px 0; text-align: center; }
+        .chart img { max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .alert-box { background: #ffebee; border-left: 4px solid #e74c3c; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .back-link { display: inline-block; margin-top: 30px; padding: 10px 20px; background: #16a085; color: white; text-decoration: none; border-radius: 4px; }
+        .back-link:hover { background: #138d75; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Financial Reconciliation & Payment Analysis</h1>
+            <p class="meta">Report Period: November 2025 | Generated: 2025-11-01 to 2025-11-30</p>
+        </div>
+
+        
+        <div class="alert-box">
+            <strong>⚠️ Reconciliation Alert:</strong> 21 orders are unsettled (no successful transaction)
+        </div>
+        
+
+        
+        <div class="chart">
+            <h2>Payment Method Distribution</h2>
+            <img src="payment_methods_chart.png" alt="Payment Methods Chart">
+        </div>
+        
+
+        
+        <div class="chart">
+            <h2>Daily Cash Flow</h2>
+            <img src="daily_cashflow_chart.png" alt="Cash Flow Chart">
+        </div>
+        
+
+        <div class="grid">
+            <div>
+                <h2>Payment Method Statistics</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Payment Method</th>
+                            <th>Transactions</th>
+                            <th>Total Amount</th>
+                            <th>Avg Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td><strong>PayPal</strong></td>
+                            <td>108</td>
+                            <td>$68210.48</td>
+                            <td>$631.58</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>Credit Card</strong></td>
+                            <td>86</td>
+                            <td>$60514.21</td>
+                            <td>$703.65</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>Debit Card</strong></td>
+                            <td>91</td>
+                            <td>$56118.30</td>
+                            <td>$616.68</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>Bank Transfer</strong></td>
+                            <td>1</td>
+                            <td>$1423.52</td>
+                            <td>$1423.52</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+
+            <div>
+                <h2>Unsettled Orders</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td>ORD-EVKn7200</td>
+                            <td>2025-11-25</td>
+                            <td>$133.73</td>
+                            <td><span style="color: orange;">PENDING</span></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>ORD-wMvM9460</td>
+                            <td>2025-11-25</td>
+                            <td>$1313.59</td>
+                            <td><span style="color: orange;">SHIPPED</span></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>ORD-ZtfN7959</td>
+                            <td>2025-11-23</td>
+                            <td>$1291.22</td>
+                            <td><span style="color: orange;">PENDING</span></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>ORD-ifHI4284</td>
+                            <td>2025-11-21</td>
+                            <td>$376.14</td>
+                            <td><span style="color: orange;">SHIPPED</span></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>ORD-KEYa4484</td>
+                            <td>2025-11-20</td>
+                            <td>$838.85</td>
+                            <td><span style="color: orange;">SHIPPED</span></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>ORD-SmeL3388</td>
+                            <td>2025-11-19</td>
+                            <td>$378.50</td>
+                            <td><span style="color: orange;">PENDING</span></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>ORD-qYVn4655</td>
+                            <td>2025-11-18</td>
+                            <td>$563.53</td>
+                            <td><span style="color: orange;">PENDING</span></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>ORD-FIAu2381</td>
+                            <td>2025-11-17</td>
+                            <td>$358.02</td>
+                            <td><span style="color: orange;">PENDING</span></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>ORD-ttnJ7208</td>
+                            <td>2025-11-15</td>
+                            <td>$478.84</td>
+                            <td><span style="color: orange;">SHIPPED</span></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>ORD-CoWC5170</td>
+                            <td>2025-11-14</td>
+                            <td>$386.03</td>
+                            <td><span style="color: orange;">SHIPPED</span></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>ORD-mBBd0754</td>
+                            <td>2025-11-13</td>
+                            <td>$697.36</td>
+                            <td><span style="color: orange;">SHIPPED</span></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>ORD-aFhr5002</td>
+                            <td>2025-11-10</td>
+                            <td>$885.91</td>
+                            <td><span style="color: orange;">PENDING</span></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>ORD-KedU5071</td>
+                            <td>2025-11-08</td>
+                            <td>$821.40</td>
+                            <td><span style="color: orange;">SHIPPED</span></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>ORD-rLAL7813</td>
+                            <td>2025-11-07</td>
+                            <td>$209.01</td>
+                            <td><span style="color: orange;">SHIPPED</span></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>ORD-kPxL7359</td>
+                            <td>2025-11-06</td>
+                            <td>$275.08</td>
+                            <td><span style="color: orange;">SHIPPED</span></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+                
+                <p style="color: #7f8c8d; font-size: 12px; margin-top: 5px;">
+                    Showing 15 of 21 unsettled orders
+                </p>
+                
+            </div>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to Dashboard</a>
+    </div>
+</body>
+</html>

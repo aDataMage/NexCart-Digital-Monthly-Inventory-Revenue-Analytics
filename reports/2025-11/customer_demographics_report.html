@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Demographics & Behavior Report</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f5f5; padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; margin-bottom: 10px; font-size: 32px; }
+        h2 { color: #34495e; margin-top: 30px; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #9b59b6; }
+        .header { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        .meta { color: #7f8c8d; font-size: 14px; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 14px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #9b59b6; color: white; font-weight: 600; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:hover { background-color: #f0f0f0; }
+        .chart { margin: 30px 0; text-align: center; }
+        .chart img { max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .back-link { display: inline-block; margin-top: 30px; padding: 10px 20px; background: #9b59b6; color: white; text-decoration: none; border-radius: 4px; }
+        .back-link:hover { background: #8e44ad; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 20px 0; }
+        .insight-box { background: #ebdef0; padding: 20px; border-radius: 5px; margin: 20px 0; }
+        .insight-box h3 { color: #2c3e50; margin-bottom: 10px; }
+        .stat  { margin: 10px 0; font-size: 16px; }
+        .stat-label { color: #7f8c8d; }
+        .stat-value { font-weight: bold; color: #2c3e50; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Customer Demographics & Behavior Report</h1>
+            <p class="meta">Report Period: November 2025 | Generated: 2025-11-01 to 2025-11-30</p>
+        </div>
+
+        
+        <div class="insight-box">
+            <h3>📊 Key Insight</h3>
+            <div class="stat">
+                <span class="stat-label">Average Time to First Purchase:</span>
+                <span class="stat-value">173.7 days</span>
+            </div>
+        </div>
+        
+
+        
+        <div class="chart">
+            <h2>Top States by Sales Volume</h2>
+            <img src="customer_geo_chart.png" alt="Geographic Chart">
+        </div>
+        
+
+        
+        <div class="chart">
+            <h2>New Customer Acquisition Trend</h2>
+            <img src="customer_acquisition_chart.png" alt="Acquisition Chart">
+        </div>
+        
+
+        <div class="grid">
+            <div>
+                <h2>Geographic Distribution</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>State</th>
+                            <th>City</th>
+                            <th>Customers</th>
+                            <th>Total Sales</th>
+                            <th>Orders</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td><strong>HI</strong></td>
+                            <td>Sarahview</td>
+                            <td>1</td>
+                            <td>$4980.19</td>
+                            <td>5</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>LA</strong></td>
+                            <td>Lake Jamesshire</td>
+                            <td>1</td>
+                            <td>$4254.27</td>
+                            <td>5</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>VT</strong></td>
+                            <td>Paulberg</td>
+                            <td>1</td>
+                            <td>$4218.42</td>
+                            <td>8</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>PW</strong></td>
+                            <td>Powersfurt</td>
+                            <td>1</td>
+                            <td>$3394.52</td>
+                            <td>3</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>CT</strong></td>
+                            <td>Jasonfurt</td>
+                            <td>1</td>
+                            <td>$3128.96</td>
+                            <td>3</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>AK</strong></td>
+                            <td>Lopezbury</td>
+                            <td>1</td>
+                            <td>$3078.16</td>
+                            <td>4</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>MT</strong></td>
+                            <td>Calhounton</td>
+                            <td>1</td>
+                            <td>$3040.70</td>
+                            <td>6</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>IL</strong></td>
+                            <td>Gonzalezburgh</td>
+                            <td>1</td>
+                            <td>$2960.27</td>
+                            <td>2</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>KY</strong></td>
+                            <td>West Sherryside</td>
+                            <td>1</td>
+                            <td>$2957.13</td>
+                            <td>4</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>WA</strong></td>
+                            <td>Port Michele</td>
+                            <td>1</td>
+                            <td>$2743.29</td>
+                            <td>5</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>KY</strong></td>
+                            <td>South Erika</td>
+                            <td>1</td>
+                            <td>$2681.79</td>
+                            <td>3</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>VI</strong></td>
+                            <td>Leonardburgh</td>
+                            <td>1</td>
+                            <td>$2614.12</td>
+                            <td>4</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>AL</strong></td>
+                            <td>West Karenborough</td>
+                            <td>1</td>
+                            <td>$2591.88</td>
+                            <td>3</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>DC</strong></td>
+                            <td>Gutierrezmouth</td>
+                            <td>1</td>
+                            <td>$2495.81</td>
+                            <td>4</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>ME</strong></td>
+                            <td>North Loganborough</td>
+                            <td>1</td>
+                            <td>$2461.60</td>
+                            <td>5</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>DE</strong></td>
+                            <td>Lake Edwardport</td>
+                            <td>1</td>
+                            <td>$2336.41</td>
+                            <td>3</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>RI</strong></td>
+                            <td>Whitneyfort</td>
+                            <td>1</td>
+                            <td>$2286.06</td>
+                            <td>2</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>SC</strong></td>
+                            <td>Bentonborough</td>
+                            <td>1</td>
+                            <td>$2255.99</td>
+                            <td>3</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>ID</strong></td>
+                            <td>Port Sally</td>
+                            <td>1</td>
+                            <td>$2120.65</td>
+                            <td>3</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>FL</strong></td>
+                            <td>New Tamara</td>
+                            <td>1</td>
+                            <td>$2111.38</td>
+                            <td>2</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+
+            <div>
+                <h2>New Customer Acquisition</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>New Customers</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td>2025-11</td>
+                            <td><strong>8</strong></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to Dashboard</a>
+    </div>
+</body>
+</html>

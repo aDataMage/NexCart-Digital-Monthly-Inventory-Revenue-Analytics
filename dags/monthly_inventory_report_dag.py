@@ -1,3 +1,7 @@
+from src.email_client import EmailClient
+from src.reporting.report_builder import ReportBuilder
+from spark_jobs.kpi_aggregation import run_kpi_aggregation
+from spark_jobs.etl_raw_to_cleaned import run_etl
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
@@ -7,14 +11,12 @@ import sys
 import os
 
 # Add project root to path so we can import src modules
-PROJECT_ROOT = "d:/Projects/NOV-2025"
+# Use container path when running in Docker, fallback to local path
+PROJECT_ROOT = os.environ.get(
+    'PYTHONPATH', '/opt/airflow/project').split(':')[0]
 if PROJECT_ROOT not in sys.path:
-    sys.path.append(PROJECT_ROOT)
+    sys.path.insert(0, PROJECT_ROOT)
 
-from spark_jobs.etl_raw_to_cleaned import run_etl
-from spark_jobs.kpi_aggregation import run_kpi_aggregation
-from src.reporting.report_builder import ReportBuilder
-from src.email_client import EmailClient
 
 default_args = {
     'owner': 'airflow',
@@ -49,10 +51,10 @@ with DAG(
         # Get execution date or use current month
         execution_date = context.get('execution_date') or datetime.now()
         month_folder = execution_date.strftime('%Y-%m')
-        
+
         reports_dir = Path(PROJECT_ROOT) / 'reports' / month_folder
         reports_dir.mkdir(parents=True, exist_ok=True)
-        
+
         # Store the month in XCom for other tasks
         return month_folder
 
@@ -61,27 +63,27 @@ with DAG(
         # Get the month from XCom
         ti = context['ti']
         report_month = ti.xcom_pull(task_ids='create_monthly_folder')
-        
+
         # Build reports for the specified month
         builder = ReportBuilder(report_month=report_month)
         builder.build_report()
-        
+
         return str(builder.output_dir)
-        
+
     def send_report_email(**context):
         """Send email notification with report link."""
         ti = context['ti']
         report_dir = ti.xcom_pull(task_ids='generate_reports')
         report_month = ti.xcom_pull(task_ids='create_monthly_folder')
-        
+
         email_client = EmailClient()
-        
+
         # Read index file
         index_path = Path(report_dir) / 'index.html'
-        
+
         with open(index_path, 'r', encoding='utf-8') as f:
             body = f.read()
-            
+
         email_client.send_email(
             subject=f"Monthly Inventory Analytics Report - {report_month}",
             body=body,
